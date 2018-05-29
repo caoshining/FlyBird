@@ -4,7 +4,7 @@ export const Resources = [
     ['penciUp','res/pie_up.png'],
     ['penciDown','res/pie_down.png'],
     ['birds','res/birds.png'],
-    ['starButton','res/start_button.png'],
+    ['starButton','res/start_button.png']
 ]
 
 // export{
