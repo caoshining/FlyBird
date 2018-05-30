@@ -1,6 +1,7 @@
 // 初始化整个游戏的精灵，作为游戏入口
 import {ResourceLoader} from './js/base/ResoureceLoader.js'
 import {Director} from './js/Director.js'
+import {BackGround} from './js/runtime/BackGround.js'
 export class Main{
     constructor(){
       console.log(111)
@@ -10,24 +11,26 @@ export class Main{
       const loader = ResoureceLoader.create();
       loader.onLoader(map=>this.onResoureFirstLoaded(map))
 
-      let image = new Image() ;
-      image.src = '../res/background.png';
-      image.onload = () =>{
-        this.ctx.drawImage(
-          image,
-          0,
-          0,
-          image.width,
-          image.height,
-          0,
-          0,
-          image.width,
-          image.height
-        )
-      }
+      // let image = new Image() ;
+      // image.src = '../res/background.png';
+      // image.onload = () =>{
+      //   this.ctx.drawImage(
+      //     image,
+      //     0,
+      //     0,
+      //     image.width,
+      //     image.height,
+      //     0,
+      //     0,
+      //     image.width,
+      //     image.height
+      //   )
+      // }
       
     }
     onResoureFirstLoaded(map){
       console.log(map)
+      let background = new BackGround(this.ctx,map.get('background'));
+      background.draw()
     }
 }
