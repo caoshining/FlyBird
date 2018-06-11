@@ -6,4 +6,11 @@ export class Director{
         }
         return Director.instance;
     }
+    constructor(){
+        this.dataStore = DataStore.getInstance();
+    }
+    run(){
+        const backgroundSprite = this.dataStore.get('background')
+        backgroundSprite.draw()
+    }
 }
